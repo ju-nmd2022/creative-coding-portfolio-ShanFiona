@@ -1,50 +1,50 @@
 [
     {
       "file": "experiments/lineArt.js",
-      "name": "Line Art",
-      "description": "Explains the what and the why. What is the main idea? What is the purpose? What is the inspiration?"
-    },  
-  
-    {
-      "file": "experiments/lineArtColor.js",
-      "name": "Line Art Grid",
-      "description": "Explains the what and the why. What is the main idea? What is the purpose? What is the inspiration?"
+      "name": "Hypnotic Circle",
+      "description": "White lines rotate in a circle on a black background, creating a smooth, hypnotic motion. Inspired by Zach Lieberman’s work, this piece explores the concept of movement and pattern in a simplified form."
     },  
   
     {
       "file": "experiments/lineArtGrid.js",
-      "name": "Line Art Color",
-      "description": "Explains the what and the why. What is the main idea? What is the purpose? What is the inspiration?"
+      "name": "Hypnotic Grid",
+      "description": "White lines form a wave pattern within a grid on a black background. Building on ~ Hypnotic Circle ~, this piece introduces a grid layout to explore how repeating wave patterns interact across a structured canvas."
+    },  
+  
+    {
+      "file": "experiments/lineArtColor.js",
+      "name": "Disco Grid",
+      "description": "Colorful lines create a disco ball-like effect within a grid on a black background. This piece evolves from ~ Grid Waves ~ by adding random colors and adjusting the grid and line settings."
     },  
   
     {
       "file": "experiments/lineArtShape.js",
-      "name": "Line Art Shape",
-      "description": "Explains the what and the why. What is the main idea? What is the purpose? What is the inspiration?"
+      "name": "Hypnotic Heart",
+      "description": "Red lines trace a rotating heart shape on a black background, creating a hypnotic effect. This piece adapts the ~ Hypnotic Circle ~ concept to explore a new form with the heart shape, combining rhythm and motion with a romantic twist."
     },
   
     {
       "file": "experiments/waveArt.js",
-      "name": "Wave art",
-      "description": "Explains the what and the why. What is the main idea? What is the purpose? What is the inspiration?"
+      "name": "Hypnotic Spiral",
+      "description": "White lines rotate in a spiral pattern on a black background, creating a hypnotic effect with smooth, wave-like motion. This piece builds on the earlier ~ Hypnotic Circle ~ by adding more lines and rotation."
     },  
   
     {
       "file": "experiments/waveArtGrid.js",
       "name": "Wave Art Grid",
-      "description": "Explains the what and the why. What is the main idea? What is the purpose? What is the inspiration?"
+      "description": ""
     },  
   
     {
       "file": "experiments/waveArtColor.js",
       "name": "Wave Art Color",
-      "description": "Explains the what and the why. What is the main idea? What is the purpose? What is the inspiration?"
+      "description": ""    
     },  
   
     {
       "file": "experiments/waveArtShape.js",
       "name": "Wave Art Shape",
-      "description": "Explains the what and the why. What is the main idea? What is the purpose? What is the inspiration?"
+      "description": ""    
     }
   ]
   

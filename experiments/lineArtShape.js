@@ -1,5 +1,5 @@
 function setup() {
-    createCanvas(600, 600);
+  createCanvas(windowWidth, windowHeight);
     background(0);
     stroke(255, 0, 0); 
     noFill();
@@ -8,10 +8,10 @@ function setup() {
   
   function draw() {
     background(0, 50);
-    translate(width / 2, height / 3);
+    translate(width / 2, height / 2.5);
   
     let numLines = 150; 
-    let radius = 15; 
+    let radius = min(width, height) / 40;
   
     for (let i = 0; i < numLines; i++) {
 
@@ -30,5 +30,9 @@ function setup() {
     }
   
     rotate(frameCount * 0.001);
+  }
+  
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
   }
   

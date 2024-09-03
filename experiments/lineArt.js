@@ -11,7 +11,7 @@ function setup() {
     translate(width / 2, height / 2.5);
     
     let numLines = 200; 
-    let radius = 400;
+    let radius = 500;
 
     for (let i = 0; i < numLines; i++) {
       let angle = map(i, 0, numLines, 0, TWO_PI);

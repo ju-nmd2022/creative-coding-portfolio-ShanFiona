@@ -1,8 +1,7 @@
-let angleOffset = 0; 
-const gridSize = 4; 
+let angleOffset = 0;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight); 
+  createCanvas(windowWidth, windowHeight);
   background(0);
   strokeWeight(0.2);
   noFill();
@@ -10,34 +9,36 @@ function setup() {
 
 function draw() {
   background(0, 50);
-  
-  for (let y = 0; y < gridSize; y++) {
-    for (let x = 0; x < gridSize; x++) {
-      push();
-      translate(x * width / gridSize, y * height / gridSize);
-      
-      translate(width / gridSize / 2, height / gridSize / 2);
-      angleOffset += 0.01; 
-      let numLines = 500; 
-      let radius = min(width, height) /7; 
-      stroke(255); 
 
+  const cellSize = 150; 
+  const cols = ceil(width / cellSize); 
+  const rows = ceil(height / cellSize);
+  
+  for (let y = 0; y < rows; y++) {
+    for (let x = 0; x < cols; x++) {
+      push();
+      translate(x * cellSize + cellSize / 2, y * cellSize + cellSize / 2);
+      angleOffset += 0.02;
+      let numLines = 400;
+      let radius = min(cellSize, cellSize) / 3;
+    
       for (let i = 0; i < numLines; i++) {
         let angle = map(i, 0, numLines, 0, TWO_PI);
-        let x = radius * cos(angle);
-        let y = radius * sin(angle);
+        let lineX = radius * cos(angle);
+        let lineY = radius * sin(angle);
 
-        // wave effect
-        let waveOffset = sin(frameCount * 0.02 + i * 0.1) * 40;
+        // Wave effect
+        let waveOffset = sin(frameCount * 0.02 + i * 0.1) * 60;
 
-        line(0, 0, x + waveOffset, y + waveOffset);
+        stroke(255);
+        line(0, 0, lineX + waveOffset, lineY + waveOffset);
       }
-      
+
       pop();
     }
   }
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight); 
+  resizeCanvas(windowWidth, windowHeight);
 }
