@@ -4,7 +4,7 @@ const gridSize = 9;
 function setup() {
   createCanvas(windowWidth, windowHeight); 
   background(0);
-  strokeWeight(0.1);
+  strokeWeight(0.3);
   noFill();
 }
 

@@ -1,5 +1,5 @@
 function setup() {
-    createCanvas(600, 600);
+  createCanvas(windowWidth, windowHeight);
     background(0);
     stroke(200);
     noFill();
@@ -12,7 +12,7 @@ function setup() {
     
     let numLines = 200; 
     let radius = 400;
-    
+
     for (let i = 0; i < numLines; i++) {
       let angle = map(i, 0, numLines, 0, TWO_PI);
       let x = radius * cos(angle);
@@ -27,4 +27,7 @@ function setup() {
     rotate(frameCount * 0.001);
   }
   
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight); 
+  }
   

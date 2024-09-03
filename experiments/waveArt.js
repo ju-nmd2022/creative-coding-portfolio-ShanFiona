@@ -1,16 +1,16 @@
 let angleOffset = 0; // Rotation
 
 function setup() {
-    createCanvas(600, 600);
+    createCanvas(windowWidth, windowHeight);
     background(0);
-    strokeWeight(0.10);
+    strokeWeight(0.20);
     noFill();
 }
 
 function draw() {
     background(0, 50);
     
-    translate(width / 2, height / 2.5);
+    translate(width / 2, height / 2.2);
     
     // Speed
     angleOffset += 0.03; 
@@ -28,6 +28,9 @@ function draw() {
 
         line(0, 0, x + waveOffset, y + waveOffset);
     }
-
-
 }
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight); 
+  }
+  
