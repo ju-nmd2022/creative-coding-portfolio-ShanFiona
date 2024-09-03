@@ -1,10 +1,8 @@
-let angleOffset = 0; 
-const width = 600;
-const height = 600;
-const gridSize = 9; 
+let angleOffset = 0;
+const gridSize = 9;
 
 function setup() {
-  createCanvas(width, height);
+  createCanvas(windowWidth, windowHeight);
   background(0);
   strokeWeight(0.2);
   noFill();
@@ -12,17 +10,17 @@ function setup() {
 
 function draw() {
   background(0, 50);
-  
+
   for (let y = 0; y < gridSize; y++) {
     for (let x = 0; x < gridSize; x++) {
       push();
       translate(x * width / gridSize, y * height / gridSize);
-      
+
       translate(width / gridSize / 2, height / gridSize / 2);
-      angleOffset += 0.01; 
-      let numLines = 50; 
-      let radius = 50;
-      stroke(255); 
+      angleOffset += 0.01;
+      let numLines = 50;
+      let radius = min(width, height) / 12;
+      stroke(255);
 
       for (let i = 0; i < numLines; i++) {
         let angle = map(i, 0, numLines, 0, TWO_PI);
@@ -34,8 +32,12 @@ function draw() {
 
         line(0, 0, x + waveOffset, y + waveOffset);
       }
-      
+
       pop();
     }
   }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }

@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(innerWidth, innerHeight);
+    createCanvas(600, 600);
     background(0);
     stroke(200);
     noFill();

@@ -13,9 +13,9 @@ function draw() {
     translate(width / 2, height / 2.5);
     
     // Speed
-    angleOffset += 0.01; 
+    angleOffset += 0.03; 
     let numLines = 500; 
-    let radius = 150;
+    let radius = 210;
     stroke(255); 
 
     for (let i = 0; i < numLines; i++) {

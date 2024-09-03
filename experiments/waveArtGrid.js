@@ -1,10 +1,8 @@
 let angleOffset = 0; 
-const width = 600;
-const height = 600;
-const gridSize = 3; 
+const gridSize = 4; 
 
 function setup() {
-  createCanvas(width, height);
+  createCanvas(windowWidth, windowHeight); 
   background(0);
   strokeWeight(0.2);
   noFill();
@@ -21,7 +19,7 @@ function draw() {
       translate(width / gridSize / 2, height / gridSize / 2);
       angleOffset += 0.01; 
       let numLines = 500; 
-      let radius = 90;
+      let radius = min(width, height) /7; 
       stroke(255); 
 
       for (let i = 0; i < numLines; i++) {
@@ -38,4 +36,8 @@ function draw() {
       pop();
     }
   }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight); 
 }
