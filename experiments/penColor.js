@@ -3,16 +3,14 @@
 class Particle {
     constructor(x, y) {
         this.position = createVector(x, y);
-        const a = Math.random() * Math.PI * 2;
-        const v = 8 + Math.random();
+        const a = Math.random() * Math.PI * 1;
+        const v = 1 + Math.random();
         this.velocity = createVector(Math.cos(a) * v, Math.sin(a) * v);
-        this.lifespan = 100;
-        this.size = 5;
+        this.size = 3;
         this.color = color(random(255), random(255), random(255));
     }
       
     update() {
-        this.lifespan--;
         this.velocity.mult(0.99);
         this.position.add(this.velocity);
        

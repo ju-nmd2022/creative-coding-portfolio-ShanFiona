@@ -51,6 +51,12 @@
       "file": "experiments/penColor.js",
       "name": "Color Exploding Pen",
       "description": ""    
+    },  
+  
+    {
+      "file": "experiments/penGrid.js",
+      "name": "Color Exploding Pen",
+      "description": ""    
     }
   ]
   

@@ -2,20 +2,20 @@
 
 class Particle {
   constructor(x, y) {
-          this.position = createVector(x, y);
-      const a = 1;
-      const v = 1;
+      this.position = createVector(x, y);
+      const a = Math.random() * Math.PI * 1;
+      const v = 1 + Math.random();
       this.velocity = createVector(Math.cos(a) * v, Math.sin(a) * v);
-      this.size = 10;
-      this.color = color(random(255), random(255));
-  }
-
+      this.size = 50;
+      this.color = color(random(200, 255), random(100, 200), random(150, 220));    
+    }
+    
   update() {
-      this.velocity.mult(0.99);
+      this.velocity.mult(0.5);
       this.position.add(this.velocity);
      
   }
-  
+
   draw() {
       push();
       translate(this.position.x, this.position.y);
@@ -33,13 +33,16 @@ class Particle {
 let particles = [];
 let prevMouseX, prevMouseY;  
 
+const gridSizeX = 2;
+const gridSizeY = 2;
+
 function setup() {
   createCanvas(innerWidth, innerHeight);
   background(0);
 }
 
 function generateParticles(x, y) {
-  for (let i = 0; i < 5; i++) {  
+  for (let i = 0; i < 10; i++) {  
       const px = x + random(-1, 1);
       const py = y + random(-1, 1);
       const particle = new Particle(px, py);
@@ -48,23 +51,38 @@ function generateParticles(x, y) {
 }
 
 function draw() {
-  for (let particle of particles) {
-      particle.update();
-      particle.draw();
+  background(0);
 
-      if (particle.isDead()) {
-          particles.splice(particles.indexOf(particle), 1);
+  for (let y = 0; y < gridSizeY; y++) {
+    for (let x = 0; x < gridSizeX; x++) {
+      push();
+      translate(x * width / gridSizeX, y * height / gridSizeY);
+      translate(width / gridSizeX / 2, height / gridSizeY / 2);
+
+      for (let particle of particles) {
+        particle.draw();
       }
+
+      pop();
+    }
+  }
+
+  for (let particle of particles) {
+    particle.update();
+
+    if (particle.isDead()) {
+      particles.splice(particles.indexOf(particle), 1);
+    }
   }
 
   if (mouseIsPressed) {
     if (prevMouseX !== undefined && prevMouseY !== undefined) {
-        const steps = dist(mouseX, mouseY, prevMouseX, prevMouseY) / 5;
-        for (let i = 0; i < steps; i++) {
-            let x = lerp(prevMouseX, mouseX, i / steps);
-            let y = lerp(prevMouseY, mouseY, i / steps);
-            generateParticles(x, y); 
-        }
+      const steps = dist(mouseX, mouseY, prevMouseX, prevMouseY) / 5;
+      for (let i = 0; i < steps; i++) {
+        let x = lerp(prevMouseX, mouseX, i / steps);
+        let y = lerp(prevMouseY, mouseY, i / steps);
+        generateParticles(x, y); 
+      }
     }
     prevMouseX = mouseX;
     prevMouseY = mouseY;
