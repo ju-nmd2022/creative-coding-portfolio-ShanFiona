@@ -42,8 +42,14 @@
     },  
   
     {
-      "file": "experiments/waveArtShape.js",
-      "name": "Wave Art Shape",
+      "file": "experiments/penThreeD.js",
+      "name": "3D Pen",
+      "description": ""    
+    },  
+  
+    {
+      "file": "experiments/penColor.js",
+      "name": "Color Exploding Pen",
       "description": ""    
     }
   ]

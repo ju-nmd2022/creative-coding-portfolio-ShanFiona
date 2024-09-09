@@ -15,7 +15,7 @@ function draw() {
     // Speed
     angleOffset += 0.03; 
     let numLines = 500; 
-    let radius = 210;
+    let radius = 300;
     stroke(255); 
 
     for (let i = 0; i < numLines; i++) {
