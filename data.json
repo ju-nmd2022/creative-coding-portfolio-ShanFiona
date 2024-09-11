@@ -55,7 +55,31 @@
   
     {
       "file": "experiments/penGrid.js",
-      "name": "Color Exploding Pen",
+      "name": "Grid Pen",
+      "description": ""    
+    },  
+  
+    {
+      "file": "experiments/Sun.js",
+      "name": "",
+      "description": ""    
+    },  
+  
+    {
+      "file": "experiments/mountan.js",
+      "name": "",
+      "description": ""    
+    },  
+  
+    {
+      "file": "experiments/color.js",
+      "name": "",
+      "description": ""    
+    },  
+  
+    {
+      "file": "experiments/buuerflie.js",
+      "name": "",
       "description": ""    
     }
   ]
