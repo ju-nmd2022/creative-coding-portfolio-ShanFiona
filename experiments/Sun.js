@@ -1,17 +1,28 @@
 // The following code is based on the Creative Coding - Particle example 01 from Garrit
 
+let particles = [];
+let centerX, centerY;
+
 function setup() {
   createCanvas(innerWidth, innerHeight);
+  centerX = innerWidth / 2;
+  centerY = innerHeight / 2;
   background(0, 0, 0);
   colorMode(HSB);
-  
+
   let offsetPixels = 50;
-  
-  // Bottom particles
-  createParticles(innerWidth / 2, innerHeight / 2 + offsetPixels, 0, 0);
-  
-  // Top particles
-  createParticles(innerWidth / 2, innerHeight / 2 - offsetPixels, 0, 1);
+
+  // Bottom
+  createParticles(centerX, centerY + offsetPixels, 0, 0);
+
+  // Top
+  createParticles(centerX, centerY - offsetPixels, 0, 1);
+}
+
+function windowResized() {
+  resizeCanvas(innerWidth, innerHeight);
+  centerX = innerWidth / 2;
+  centerY = innerHeight / 2;
 }
 
 class Particle {
@@ -52,8 +63,6 @@ class Particle {
   }
 }
 
-let particles = [];
-
 function createParticles(x, y, generation, direction) {
   let r, g, b;
   if (direction === 0) {
@@ -74,6 +83,16 @@ function createParticles(x, y, generation, direction) {
 }
 
 function draw() {
+  for (let i = 0; i < 5; i++) {
+    let opacity = 0.01 - i * 0.005;
+    fill(50, 100, 100, opacity);
+    ellipse(centerX, centerY, 150 + i * 10);
+  }
+
+  fill(60, 255, 255);
+  noStroke();
+  ellipse(centerX, centerY, 80, 80);
+
   for (let particle of particles) {
     particle.draw();
     particle.move();

@@ -4,14 +4,20 @@ function setup() {
   createCanvas(innerWidth, innerHeight);
   background(0, 0, 0);
   colorMode(HSB);
-  createParticles(innerWidth / 2, innerHeight / 2, 0, 0, 1); 
-  createParticles(innerWidth / 2, innerHeight / 2, 0, 1, 1); 
-  createParticles(innerWidth / 2, innerHeight / 2, 0, 1, 0); 
-  createParticles(innerWidth / 2, innerHeight / 2, 0, 0, 0); 
+  createParticles(width / 2.5, height / 2, 0, 0); // bottom
+  createParticles(width / 2.5, height / 2, 0, 1); // top
+}
+
+function windowResized() {
+  resizeCanvas(innerWidth, innerHeight);
+  background(0, 0, 0);
+  particles = [];
+  createParticles(width / 2.5, height / 2, 0, 0);
+  createParticles(width / 2.5, height / 2, 0, 1);
 }
 
 class Particle {
-  constructor(x, y, degree, r, g, b, generation, direction, horizontalDirection) {
+  constructor(x, y, degree, r, g, b, generation, direction) {
     this.x = x;
     this.y = y;
     this.lastX = x;
@@ -24,23 +30,18 @@ class Particle {
     this.life = 0;
     this.generation = generation;
     this.direction = direction; 
-    this.horizontalDirection = horizontalDirection; 
+  }
+
+  move() {
     this.b = 50 + (1.5 * this.maxLife) / this.life;
     this.lastX = this.x;
     this.lastY = this.y;
-
-    if (this.horizontalDirection === 0) {
-      this.x += Math.cos((this.degree / 0.5) * Math.PI) * Math.random() * 10;
-    } else {
-      this.x -= Math.cos((this.degree / 0.5) * Math.PI) * Math.random() * 10;
-    }
-
+    this.x += Math.cos((this.degree / 360) * Math.PI) * Math.random() * 10;
     if (this.direction === 0) {
       this.y += Math.sin((this.degree / 180) * Math.PI) * Math.random() * 20;
     } else {
       this.y -= Math.sin((this.degree / 180) * Math.PI) * Math.random() * 20;
     }
-
     this.life++;
     this.degree++;
   }
@@ -55,7 +56,7 @@ class Particle {
 
 let particles = [];
 
-function createParticles(x, y, generation, direction, horizontalDirection) {
+function createParticles(x, y, generation, direction) {
   let r, g, b;
   if (direction === 0) {
     r = Math.random() * 60 + 30;
@@ -66,11 +67,10 @@ function createParticles(x, y, generation, direction, horizontalDirection) {
     g = Math.random() * 60 + 220;
     b = Math.random() * 60 + 240;
   }
-  
   let maxDegrees = 180;
   let offset = 0.9;
   for (let i = offset; i < offset + maxDegrees; i++) {
-    let particle = new Particle(x, y, i * 1, r, g, b, generation, direction, horizontalDirection); 
+    let particle = new Particle(x, y, i * 1, r, g, b, generation, direction);
     particles.push(particle);
   }
 }

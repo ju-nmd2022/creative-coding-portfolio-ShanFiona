@@ -4,6 +4,9 @@ function setup() {
   createCanvas(innerWidth, innerHeight);
   background(0, 0, 0);
   colorMode(HSB);
+  noFill();
+  strokeWeight(1);
+  stroke(255);
   createParticles(innerWidth / 2, innerHeight / 2, 0, 0); // bottom
   createParticles(innerWidth / 2, innerHeight / 2, 0, 1); // top
 }
@@ -78,4 +81,18 @@ function draw() {
       }
     }
   }
+
+  let amplitude = 90;
+  let stepSize = 50; 
+  let baseY = height / 2.3; 
+  stroke(80, 255, 100);
+
+  beginShape();
+  let toggle = false; 
+  for (let x = 0; x <= width; x += stepSize) {
+    let y = toggle ? baseY + amplitude : baseY - amplitude;
+    vertex(x, y);
+    toggle = !toggle; 
+  }
+  endShape();
 }
