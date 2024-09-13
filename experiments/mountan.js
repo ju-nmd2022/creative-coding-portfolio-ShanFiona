@@ -71,6 +71,8 @@ function createParticles(x, y, generation, direction) {
 }
 
 function draw() {
+  drawMountains();
+
   for (let particle of particles) {
     particle.draw();
     particle.move();
@@ -81,18 +83,17 @@ function draw() {
       }
     }
   }
+}
 
-  let amplitude = 90;
-  let stepSize = 50; 
-  let baseY = height / 2.3; 
-  stroke(80, 255, 100);
-
-  beginShape();
-  let toggle = false; 
-  for (let x = 0; x <= width; x += stepSize) {
-    let y = toggle ? baseY + amplitude : baseY - amplitude;
-    vertex(x, y);
-    toggle = !toggle; 
+function drawMountains() {
+  stroke(50, 100, 50, 50);
+  fill(50, 100, 50, 20);
+  let mountainWidth = 100;
+  let mountainHeight = 200;
+  let mountainSpacing = 200;
+  let mountainBaseY = height / 1.8;
+  for (let x = 0; x <= width; x += mountainSpacing) {
+    let mountainPeakY = mountainBaseY - Math.random() * mountainHeight;
+    triangle(x, mountainBaseY, x + mountainWidth, mountainPeakY, x + mountainWidth * 2, mountainBaseY);
   }
-  endShape();
 }

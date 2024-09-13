@@ -4,21 +4,22 @@ function setup() {
   createCanvas(innerWidth, innerHeight);
   background(0);
   colorMode(HSB, 360, 100, 100, 100);
-  let offsetPixels = 577.95;
-  createParticles(innerWidth / 2 - offsetPixels, innerHeight - offsetPixels, 0, 0); 
-  createParticles(innerWidth / 2 - offsetPixels, offsetPixels, 0, 1);  
-  createParticles(0, innerHeight / 2 - offsetPixels, 1, 0);  
-  createParticles(innerWidth, innerHeight / 2 - offsetPixels, 1, 1);  
+  
+  createParticles(innerWidth / 2, 0, 0, 0);
+  
+  // Create particles from bottom
+  createParticles(innerWidth / 2, innerHeight, 0, 1);
 }
 
 class Particle {
+
   constructor(x, y, degree, generation, direction) {
     this.x = x;
     this.y = y;
     this.lastX = x;
     this.lastY = y;
     this.degree = degree;
-    this.maxLife = 1 + Math.floor(Math.random() * 25);
+    this.maxLife = 50 + Math.floor(Math.random() * 25);
     this.life = 0;
     this.generation = generation;
     this.direction = direction;
@@ -56,14 +57,20 @@ class Particle {
 let particles = [];
 
 function createParticles(x, y, generation, direction) {
-  let maxDegrees = 180;
-  let offset = 0.9;
-  for (let i = offset; i < offset + maxDegrees; i++) {
-    let particle = new Particle(x, y, i * 1, generation, direction);
-    particles.push(particle);
-  }
-}
 
+  let maxDegrees = 350; 
+
+  let offset = 0;
+
+  for (let i = offset; i < offset + maxDegrees; i++) {
+
+    let particle = new Particle(x, y, i * 1, generation, direction);
+
+    particles.push(particle);
+
+  }
+
+}
 function draw() {
   background(0, 0, 0, 25);  
   for (let particle of particles) {
