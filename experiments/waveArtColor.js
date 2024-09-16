@@ -3,12 +3,13 @@ let angleOffset = 0;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
-  strokeWeight(0.23);
+  strokeWeight(0.1);
   noFill();
+  frameRate(60);
 }
 
 function draw() {
-  background(0, 50);
+  background(0, 10);
 
   const cellSize = 200; 
   const cols = ceil(width / cellSize); 
@@ -19,8 +20,8 @@ function draw() {
       push();
       translate(x * cellSize + cellSize / 2, y * cellSize + cellSize / 2);
       angleOffset += 0.01;
-      let numLines = 600;
-      let radius = min(cellSize, cellSize) / 2.5; 
+      let numLines = 400;
+      let radius = min(cellSize, cellSize) / 2; 
       
       for (let i = 0; i < numLines; i++) {
         let angle = map(i, 0, numLines, 0, TWO_PI);
@@ -28,7 +29,7 @@ function draw() {
         let lineY = radius * sin(angle);
 
         // Wave effect
-        let waveOffset = sin(frameCount * 0.01 + i * 0.1) * 40;
+        let waveOffset = sin(frameCount * 0.01 + i * 0.1) * 50;
 
         let startColor = color(255, 0, 0);
         let endColor = color(0, 0, 255);

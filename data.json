@@ -1,86 +1,92 @@
 [
-    {
-      "file": "experiments/lineArt.js",
-      "name": "Hypnotic Circle",
-      "description": "White lines rotate in a circle on a black background, creating a smooth, hypnotic motion. Inspired by Zach Lieberman’s work, this piece explores the concept of movement and pattern in a simplified form."
-    },  
-  
-    {
-      "file": "experiments/lineArtGrid.js",
-      "name": "Hypnotic Grid",
-      "description": "White lines form a wave pattern within a grid on a black background. Building on ~ Hypnotic Circle ~, this piece introduces a grid layout to explore how repeating wave patterns interact across a structured canvas."
-    },  
-  
-    {
-      "file": "experiments/lineArtColor.js",
-      "name": "Disco Grid",
-      "description": "Colorful lines create a disco ball-like effect within a grid on a black background. This piece evolves from ~ Grid Waves ~ by adding random colors and adjusting the grid and line settings."
-    },  
-  
-    {
-      "file": "experiments/lineArtShape.js",
-      "name": "Hypnotic Heart",
-      "description": "Red lines trace a rotating heart shape on a black background, creating a hypnotic effect. This piece adapts the ~ Hypnotic Circle ~ concept to explore a new form with the heart shape, combining rhythm and motion with a romantic twist."
-    },
-  
-    {
-      "file": "experiments/waveArt.js",
-      "name": "Hypnotic Spiral",
-      "description": "White lines rotate in a spiral pattern on a black background, creating a hypnotic effect with smooth, wave-like motion. This piece builds on the earlier ~ Hypnotic Circle ~ by adding more lines and rotation."
-    },  
-  
-    {
-      "file": "experiments/waveArtGrid.js",
-      "name": "Wave Art Grid",
-      "description": ""
-    },  
-  
-    {
-      "file": "experiments/waveArtColor.js",
-      "name": "Wave Art Color",
-      "description": ""    
-    },  
-  
-    {
-      "file": "experiments/penThreeD.js",
-      "name": "3D Pen",
-      "description": ""    
-    },  
-  
-    {
-      "file": "experiments/penColor.js",
-      "name": "Color Exploding Pen",
-      "description": ""    
-    },  
-  
-    {
-      "file": "experiments/penGrid.js",
-      "name": "Grid Pen",
-      "description": ""    
-    },  
-  
-    {
-      "file": "experiments/Sun.js",
-      "name": "",
-      "description": ""    
-    },  
-  
-    {
-      "file": "experiments/mountan.js",
-      "name": "",
-      "description": ""    
-    },  
-  
-    {
-      "file": "experiments/color.js",
-      "name": "",
-      "description": ""    
-    },  
-  
-    {
-      "file": "experiments/butterflie.js",
-      "name": "",
-      "description": ""    
-    }
-  ]
-  
+  {
+  "file": "experiments/lineArt.js",
+  "name": "Hypnotic Circle",
+  "description": "White lines spin in a circle on a black background, creating a smooth, hypnotic effect. Inspired by Zach Lieberman, this piece plays with movement and simple patterns."
+},
+
+{
+  "file": "experiments/lineArtGrid.js",
+  "name": "Hypnotic Grid",
+  "description": "White lines make a wave pattern inside a grid on a black background. This builds on ~ Hypnotic Circle ~, adding a grid to see how the waves repeat and interact."
+},
+
+{
+  "file": "experiments/lineArtColor.js",
+  "name": "Disco Grid",
+  "description": "Colorful lines create a disco ball-like look inside a grid on a black background. This piece evolves from ~ Hypnotic Grid ~ by adding random colors and changing the grid and lines."
+},
+
+{
+  "file": "experiments/lineArtShape.js",
+  "name": "Hypnotic Heart",
+  "description": "Red lines trace a spinning heart shape on a black background, creating a hypnotic effect. This is based on ~ Hypnotic Circle ~, but uses a heart shape for a new look."
+},
+
+{
+  "file": "experiments/waveArt.js",
+  "name": "Hypnotic Spiral",
+  "description": "White lines spin in a spiral pattern on a black background, making a smooth, wave-like effect. This is an update to ~ Hypnotic Circle ~, with more lines and rotation."
+},
+
+{
+  "file": "experiments/waveArtGrid.js",
+  "name": "Spiral Grid",
+  "description": "A grid with wave patterns moving across it. Based on ~ Hypnotic Spiral ~, this adds a grid for more complex movement."
+},
+
+{
+  "file": "experiments/waveArtColor.js",
+  "name": "Color Grid",
+  "description": "A colorful version of ~ Spirale Grid ~."
+},
+
+{
+  "file": "experiments/penThreeD.js",
+  "name": "3D Doodle",
+  "description": "Dots appear as the mouse moves, connecting and growing to make it look like a 3D pen drawing."
+},
+
+{
+  "file": "experiments/penColor.js",
+  "name": "Color Exploding Pen",
+  "description": "Based on ~ 3D Doodle ~, this adds bursts of color as the mouse moves."
+},
+
+{
+  "file": "experiments/penGrid.js",
+  "name": "Mirror Pen",
+  "description": "Based on ~ 3D Doodle ~, this adds a grid and color. When you draw with the mouse, the pattern is mirrored and repeated 4 times across the grid."
+},  
+
+{
+  "file": "experiments/Sun.js",
+  "name": "Exploding Sunset",
+  "description": "I wanted to create something inspired by nature. This piece features a yellow circle representing the sun with red lines exploding outward, aiming to capture the essence of a sunset."
+},
+
+{
+  "file": "experiments/mountain.js",
+  "name": "Mountain Peaks",
+  "description": "Based on ~ Exploding Sunset ~, but with green and blue explosions for the grass and sky, and angled shapes for the mountains."
+},
+
+{
+  "file": "experiments/color.js",
+  "name": "Confetti Explosion",
+  "description": "Based on ~ Exploding Sunset ~, but with colored explosions spread across the entire canvas to give the feeling of confetti."
+},
+
+{
+  "file": "experiments/butterfly.js",
+  "name": "Butterfly Wings",
+  "description": "Based on ~ Exploding Sunset ~, but with colored explosions moving up and down toward the right side to resemble a butterfly wing."
+},
+
+{
+  "file": "experiments/lightning.js",
+  "name": "Lightning Thunderstorm",
+  "description": "Based on ~ Confetti Explosion ~, but with red and yellow explosions spread across the entire canvas to mimic the dramatic flashes of lightning in a thunderstorm."
+}
+
+]

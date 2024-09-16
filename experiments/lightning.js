@@ -5,8 +5,8 @@ function setup() {
   background(0);
   colorMode(HSB, 360, 100, 100, 100);
   
-  createParticles(innerWidth / 2, 0, 0, 0);
-  createParticles(innerWidth / 2, innerHeight, 0, 1);
+  createParticles(innerWidth / 2, 3, 6, 5, 0);  
+  createParticles(innerWidth / 2, innerHeight, 0, -5, 50);
 }
 
 class Particle {
@@ -17,23 +17,22 @@ class Particle {
     this.lastX = x;
     this.lastY = y;
     this.degree = degree;
-    this.maxLife = 50 + Math.floor(Math.random() * 25);
+    this.maxLife = 50 + Math.floor(Math.random() * 2000);
     this.life = 0;
     this.generation = generation;
     this.direction = direction;
     this.size = Math.random() * 3 + 1;  
-    this.hue = Math.random() * 360;
-    this.saturation = Math.random() * 40 + 50;  
-    this.brightness = Math.random() * 40 + 50; 
+    this.hue = Math.random() * 60;    this.saturation = Math.random() * 40 + 60;  
+    this.brightness = Math.random() * 40 + 60; 
   }
 
   move() {
     this.lastX = this.x;
     this.lastY = this.y;
     let angle = (this.degree / 180) * Math.PI;
-    this.x += Math.cos(angle) * Math.random() * 250;
+    this.x += Math.cos(angle) * Math.random() * 100;
     if (this.direction === 0) {
-      this.y += Math.sin(angle) * Math.random() * 20;
+      this.y += Math.sin(angle) * Math.random() * 10;
     } else {
       this.y -= Math.sin(angle) * Math.random() * 20;
     }
