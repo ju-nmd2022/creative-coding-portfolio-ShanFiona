@@ -72,15 +72,15 @@
 },
 
 {
-  "file": "experiments/color.js",
-  "name": "Confetti Explosion",
-  "description": "Based on ~ Exploding Sunset ~, but with colored explosions spread across the entire canvas to give the feeling of confetti."
-},
-
-{
   "file": "experiments/butterfly.js",
   "name": "Butterfly Wings",
   "description": "Based on ~ Exploding Sunset ~, but with colored explosions moving up and down toward the right side to resemble a butterfly wing."
+},
+
+{
+  "file": "experiments/color.js",
+  "name": "Confetti Explosion",
+  "description": "Based on ~ Exploding Sunset ~, but with colored explosions spread across the entire canvas to give the feeling of confetti."
 },
 
 {
