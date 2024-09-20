@@ -55,7 +55,7 @@ function draw() {
   for (let y = 0; y < gridSizeY; y++) {
     for (let x = 0; x < gridSizeX; x++) {
       push();
-      translate(x * innerWidth / gridSizeX / 2, y * innerHeight / gridSizeY / 2);
+      translate(x * innerWidth / gridSizeX / 2, y * innerHeight / gridSizeY / 2); // Look into it 
       translate(innerWidth / gridSizeX / 4, innerHeight / gridSizeY / 4);
 
       for (let particle of particles) {

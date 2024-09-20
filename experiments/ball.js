@@ -1,14 +1,15 @@
 let elements = [];
 let gravity;
 let clickCounter = 0; 
-let clickThreshold = Math.floor(random(3, 9));
+let clickThreshold;
 
 class Element {
   constructor(x, y, isHeart = false) {
     this.position = createVector(x, y);
+    this.initialPosition = createVector(x, y);
     this.velocity = createVector(0, 0);
     this.acceleration = createVector(0, 0);
-    this.size = random(20, 80);
+    this.size = Math.floor(Math.random() * (80 - 20)) + 20;
     this.mass = this.size;
     this.isHeart = isHeart; 
     this.color = this.isHeart ? color(255, 105, 180) : this.getColorBasedOnSize();
@@ -35,6 +36,12 @@ class Element {
     this.velocity.limit(10);
     this.position.add(this.velocity);
     this.acceleration.mult(0);
+  
+    if (this.position.y > height) {
+      this.position.y = height;
+      this.velocity.y *= -1;
+      this.velocity.y -= 2; 
+    }
   }
 
   draw() {
@@ -56,10 +63,10 @@ class Element {
 }
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
-    gravity = createVector(0, 10);
-    console.log("Setup function called!");
-  }
+  createCanvas(windowWidth, windowHeight);
+  gravity = createVector(0, 10);
+  clickThreshold = Math.floor(Math.random() * (9 - 3)) + 3;
+}
 
 function draw() {
   background(0);
@@ -86,13 +93,11 @@ function draw() {
 }
 
 function mousePressed() {
-    console.log("Mouse pressed!");
     clickCounter++;
     if (clickCounter >= clickThreshold) {
       elements.push(new Element(mouseX, mouseY, true));
       clickCounter = 0; 
-      clickThreshold = Math.floor(random(3, 7));
-    } else {
+      clickThreshold = Math.floor(Math.random() * (7 - 3)) + 3;    } else {
       elements.push(new Element(mouseX, mouseY));
     }
   }

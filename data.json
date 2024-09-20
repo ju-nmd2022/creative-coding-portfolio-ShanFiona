@@ -96,8 +96,14 @@
 },
 
 {
-  "file": "experiments/balltone.js",
+  "file": "experiments/ballshape.js",
   "name": "ball2",
+  "description": "?"
+},
+
+{
+  "file": "experiments/ballposition.js",
+  "name": "ball3",
   "description": "?"
 }
 
