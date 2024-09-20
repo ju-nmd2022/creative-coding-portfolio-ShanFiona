@@ -87,6 +87,18 @@
   "file": "experiments/lightning.js",
   "name": "Lightning Thunderstorm",
   "description": "Based on ~ Confetti Explosion ~, but with red and yellow explosions spread across the entire canvas to mimic the dramatic flashes of lightning in a thunderstorm."
+},
+
+{
+  "file": "experiments/ball.js",
+  "name": "?",
+  "description": "?"
+},
+
+{
+  "file": "experiments/balltone.js",
+  "name": "?",
+  "description": "?"
 }
 
 ]
