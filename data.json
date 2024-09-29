@@ -90,21 +90,26 @@
 },
 
 {
-  "file": "experiments/ball.js",
-  "name": "ball",
-  "description": "?"
+  "file": "experiments/ballPositions.js",
+  "name": "Bouncy Balls",
+  "description": "Click on the screen; depending on where you click, different sounds and balls will appear."
 },
 
 {
-  "file": "experiments/ballshape.js",
-  "name": "ball2",
-  "description": "?"
+  "file": "experiments/ballPositionAuto.js",
+  "name": "Automatic Bouncy Stars",
+  "description": "This piece is based on ~ Bouncy Ball ~ but they are stars and appear automatically."
 },
 
 {
-  "file": "experiments/ballposition.js",
-  "name": "ball3",
-  "description": "?"
+  "file": "experiments/ballShapes.js",
+  "name": "Bouncy Shapes",
+  "description": "Click on the screen; depending on which shape appears, a different tone is created."
+},
+
+{
+  "file": "experiments/ballShapesAuto.js",
+  "name": "Automatic Bouncy Shapes",
+  "description": "This piece is based on ~ Bouncy Shapes ~ but they appear automatically."
 }
-
 ]

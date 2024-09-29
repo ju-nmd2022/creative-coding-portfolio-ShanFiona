@@ -1,7 +1,6 @@
-// Tone.js Setup
-const synthA = new Tone.FMSynth().toDestination();
+// The following code is based on the Creative Coding - Force example 01 from Garrit
 
-// p5.js Setup
+const synthA = new Tone.FMSynth().toDestination();
 let elements = [];
 let gravity;
 
@@ -11,15 +10,19 @@ class Element {
         this.initialPosition = createVector(x, y);
         this.velocity = createVector(0, 0);
         this.acceleration = createVector(0, 0);
-        this.size = 40;
+        this.size = this.getSizeBasedOnY(y);
         this.mass = this.size;
         this.color = this.getColorBasedOnY(y);
     }
 
+    getSizeBasedOnY(y) {
+        return map(y, 0, height, 20, 200);
+    }
+
     getColorBasedOnY(y) {
-        let r = map(y, 0, height, 0, 255);  
-        let g = map(y, 0, height, 255, 0);  
-        let b = map(y, 0, height, 128, 255);
+        let r = 255; 
+        let g = map(y, 0, height, 0, 255); 
+        let b = 0; 
         return color(r, g, b);
     }
 

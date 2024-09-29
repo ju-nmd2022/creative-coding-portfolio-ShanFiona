@@ -1,20 +1,19 @@
-// Tone.js Setup
+// The following code is based on the Creative Coding - Force example 01 from Garrit
+
 const synthA = new Tone.FMSynth().toDestination();
 const synthB = new Tone.AMSynth().toDestination();
-
-// p5.js Setup
 let elements = [];
 let gravity;
 
 class Element {
-  constructor(x, y, shape = 0) {
+  constructor(x, y, shape = 0, size = 40) {
     this.position = createVector(x, y);
     this.initialPosition = createVector(x, y);
     this.velocity = createVector(0, 0);
     this.acceleration = createVector(0, 0);
-    this.size = 40;
-    this.mass = this.size;
     this.shape = shape;
+    this.size = size;
+    this.mass = this.size;
     this.color = this.getColor();
   }
 
@@ -144,7 +143,7 @@ function draw() {
     element.update();
     element.draw();
 
-    if (element.position.x < 0) {
+    if ( element.position.x < 0) {
       element.position.x = 0;
       element.velocity.x *= -1;
     } else if (element.position.x > width) {
@@ -163,7 +162,8 @@ function draw() {
 
 function mousePressed() {
   let shape = Math.floor(Math.random() * 5);
-  let element = new Element(mouseX, mouseY, shape);
+  let size = Math.floor(Math.random() * 100) + 20;
+  let element = new Element(mouseX, mouseY, shape, size);
   element.triggerTone();
   elements.push(element);
 }
